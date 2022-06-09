@@ -1,0 +1,76 @@
+body{
+    background-color: #E6E6E6;
+    font-family: "Product Sans";
+    font-size: 16px;
+    letter-spacing: 0.35px;
+    line-height: 19px;
+}
+#container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login-card{
+    box-sizing: border-box;
+    height: 480px;
+    width: 540px;
+    border: 1px solid #979797;
+    background-color: white;
+    box-shadow: 0 5px 20px 0 rgb(114, 114, 114);
+}
+#logo{
+    height: 100px;
+    background: #ffffff;
+    background-image: url("./login-logo.png");
+}
+#login-card-content{
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+}
+#login-card-content p{
+    margin: 10px 0;
+}
+#title{
+    margin-top: 35px !important;
+    font-size: 24px;
+    font-weight: bold;
+}
+#use-credentials-text{
+    color: #979797;
+}
+input{
+    margin: 10px 0 10px 5px;
+    border: 2px solid #E6E6E6;
+    height: 60px;
+    border-radius: 10px;
+    color: #1E2429;
+    font-size: 18px;
+    padding-left: 35px;
+}
+::placeholder{ /* Edge */
+    color: #8B97A2;
+    font-family: "Product Sans";
+    font-size: 16px;
+}
+#actions{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 10px;
+    align-items: center;
+}
+#submit{
+    height: 60px;
+    width: 140px;
+    background-color: #3C3996;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+#forget-password-text{
+    color: #8B97A2;
+    padding-left: 15px;
+}
