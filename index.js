@@ -4,7 +4,7 @@ const port = 3100;
 const path = require('path');
 const isLoggedIn = require('./isLoggedIn')
 
-app.use(express.static('public'))
+app.use(express.static('build'))
 app.use(express.static(path.join(__dirname,'staticPages')));
 
 app.get('/login', (req, res) => {
@@ -12,7 +12,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/*', isLoggedIn, (req, res) => {
-    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+    res.sendFile('index.html', {root: path.join(__dirname, 'build')});
 });
 
 app.listen(port, ()=>{
