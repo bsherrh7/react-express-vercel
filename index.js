@@ -4,7 +4,7 @@ const port = 3100;
 const path = require('path');
 const isLoggedIn = require('./isLoggedIn')
 
-app.use(express.static(path.join(__dirname,'build')));
+app.use(express.static(path.join('build')));
 app.use(express.static(path.join(__dirname,'staticPages')));
 
 app.get('/login', (req, res) => {
