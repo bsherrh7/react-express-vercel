@@ -7,13 +7,23 @@ const isLoggedIn = require('./isLoggedIn')
 app.use(express.static(path.join(__dirname,'build')));
 app.use(express.static(path.join(__dirname,'staticPages')));
 
+let isLoggedInCount =0;
+app.get('/dashboard', isLoggedIn, (req, res) => {
+    if(isLoggedInCount===1){
+        res.sendFile(path.join(__dirname, './build/index.html'));
+    } else {
+        isLoggedInCount++;
+        res.redirect('/login');
+    }
+});
+
 app.get('/login', (req, res) => {
-    console.log("tree: ",_getAllFilesFromFolder(__dirname))
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
 });
 
-app.get('/*', isLoggedIn, (req, res) => {
-    res.sendFile(path.join(__dirname, './build/index.html'));
+app.get('/api/login', isLoggedIn, (req, res) => {
+    // TODO login + authentication logic
+    res.redirect('/dashboard');
 });
 
 app.listen(port, ()=>{

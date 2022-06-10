@@ -18,7 +18,7 @@
                         <div id="forget-password-text">
                             Forgot password?
                         </div>
-                        <button id="submit" type="submit">
+                        <button id="submit" type="submit" onclick="login()">
                             Login
                         </button>
                     </div>
@@ -26,14 +26,12 @@
             </div>
         </div>
         <script>
-            const fetchUsers = () => {
-            axios.get('localhost:3100/api/login')
+            const login = () => {
+            axios.get('https://react-express-vercel-bsherrh7.vercel.app//api/login')
                 .then(response => {
                 })
                 .catch(error => console.error(error));
         };
-
-        fetchUsers();
         </script>
     </body>
 </html>
