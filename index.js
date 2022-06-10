@@ -23,7 +23,7 @@ app.get('/*', (req, res) => {
 
 app.get('/api/login', isLoggedIn, (req, res) => {
     // TODO login + authentication logic
-    res.redirect('/dashboard');
+    res.sendFile(path.join(__dirname, './build/index.html'));
 });
 
 app.listen(port, ()=>{
