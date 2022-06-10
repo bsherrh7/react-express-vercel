@@ -7,17 +7,9 @@ const isLoggedIn = require('./isLoggedIn')
 app.use(express.static(path.join(__dirname,'build')));
 app.use(express.static(path.join(__dirname,'staticPages')));
 
-let isLoggedInCount =0;
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
-});
+
 app.get('/dashboard', isLoggedIn, (req, res) => {
-    if(isLoggedInCount===1){
-        res.sendFile(path.join(__dirname, './build/index.html'));
-    } else {
-        isLoggedInCount++;
-        res.redirect('/login');
-    }
+    res.sendFile(path.join(__dirname, './build/index.html'));
 });
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
