@@ -5,10 +5,6 @@
         <link rel="stylesheet" href="./login-page.css">
     </head>
     <title>Basetwo</title>
-    <style>
-
-
-    </style>
     <body>
         <div id="container">
             <div id="login-card">
@@ -29,5 +25,15 @@
                 </div>
             </div>
         </div>
+        <script>
+            const fetchUsers = () => {
+            axios.get('localhost:3100/api/login')
+                .then(response => {
+                })
+                .catch(error => console.error(error));
+        };
+
+        fetchUsers();
+        </script>
     </body>
 </html>
