@@ -17,7 +17,7 @@ app.get('/dashboard', isLoggedIn, (req, res) => {
     }
 });
 
-app.get('/login', (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
 });
 
