@@ -8,6 +8,9 @@ app.use(express.static(path.join(__dirname,'build')));
 app.use(express.static(path.join(__dirname,'staticPages')));
 
 let isLoggedInCount =0;
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
+});
 app.get('/dashboard', isLoggedIn, (req, res) => {
     if(isLoggedInCount===1){
         res.sendFile(path.join(__dirname, './build/index.html'));
@@ -16,22 +19,18 @@ app.get('/dashboard', isLoggedIn, (req, res) => {
         res.redirect('/login');
     }
 });
-
-app.get('/*', (req, res) => {
+app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
 });
-
 app.get('/api/login', isLoggedIn, (req, res) => {
     // TODO login + authentication logic
     res.sendFile(path.join(__dirname, './build/index.html'));
 });
-
 app.listen(port, ()=>{
     console.log(`Server now listening at htttp://localhost:${port}`);
 })
 
 var _getAllFilesFromFolder = function(dir) {
-
     var filesystem = require("fs");
     var results = [];
 
@@ -45,9 +44,7 @@ var _getAllFilesFromFolder = function(dir) {
         } else results.push(file);
 
     });
-
     return results;
-
 };
 
 module.exports = app;
