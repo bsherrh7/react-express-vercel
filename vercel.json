@@ -1,9 +1,10 @@
 {
   "version": 2,
   "builds": [
+    { "src": "package.json", "use": "@vercel/static-build" },
     {
       "src": "/api/index.js",
-      "use": "@now/node"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -12,4 +13,5 @@
       "dest": "/api/index.js"
     }
   ]
+
 }
