@@ -7,12 +7,10 @@ const isLoggedIn = require('./isLoggedIn')
 app.use(express.static(path.join(__dirname,'build')));
 app.use(express.static(path.join(__dirname,'staticPages')));
 
-
 app.get('/dashboard', isLoggedIn, (req, res) => {
-    res.sendFile(path.join(__dirname, './build/index.html'));
-    
+    res.sendFile(path.join(__dirname, './build/index.html')); 
 });
-app.get('/login', (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
 });
 app.get('/api/login', isLoggedIn, (req, res) => {

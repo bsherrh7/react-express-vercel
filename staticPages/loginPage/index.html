@@ -7,23 +7,8 @@
     <title>Basetwo</title>
     <body>
         <div id="container">
-            <div id="login-card">
-                <img src="./login-logo.png"/>
-                <div id="login-card-content">
-                    <p id="title">Login</p>
-                    <p id="use-credentials-text">Use your credentials to login below.</p>
-                    <input type="text" name="email" placeholder="Email">
-                    <input type="text" name="password" placeholder="Password">
-                    <div id="actions">
-                        <div id="forget-password-text">
-                            Forgot password?
-                        </div>
-                        <button id="submit" type="submit" onclick="login()">
-                            Login
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <span id="loading-text">Loading</span>
+            <div class="dot-typing"></div>
         </div>
         <script>
             const login = () => {
