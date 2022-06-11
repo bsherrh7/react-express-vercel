@@ -6,19 +6,20 @@ const isLoggedIn = require('./isLoggedIn')
 
 const dirTree = require("directory-tree");
 
-app.use(express.static(path.join(__dirname,'staticPages')));
 app.use(express.static(path.join(__dirname,'build')));
+app.use(express.static(path.join(__dirname,'staticPages')));
+
 
 app.get('/dashboard', isLoggedIn, (req, res) => {
     console.log("in dashboard route")
     console.log("__dirname: ",__dirname)
-    const tree = dirTree("./");
+    const tree = dirTree("../");
     console.log("tree: ", tree)
     res.sendFile(path.join(__dirname, './build/index.html')); 
 });
 app.get('/*', (req, res) => {
     console.log("in all route");
-    const tree = dirTree("./");
+    const tree = dirTree("../");
     console.log("tree: ", tree)
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
 });
