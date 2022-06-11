@@ -6,8 +6,8 @@ const isLoggedIn = require('./isLoggedIn')
 
 const dirTree = require("directory-tree");
 
-app.use(express.static(path.join(__dirname,'staticPages')));
-app.use(express.static(path.join(__dirname,'build')));
+app.use(express.static(path.join(__dirname,'..','staticPages')));
+app.use(express.static(path.join(__dirname,'..','build')));
 
 app.get('/dashboard', isLoggedIn, (req, res) => {
     console.log("in dashboard route")
