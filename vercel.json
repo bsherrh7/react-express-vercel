@@ -4,11 +4,17 @@
     { 
       "src": "package.json", 
       "use": "@now/static-build"
+    },
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
     }
   ],
-
-
-  
-  "rewrites": 
-  [{ "source": "/(.*)", "destination": "index.js" }]
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
+  ]
 }
+
