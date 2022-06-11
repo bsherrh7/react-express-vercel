@@ -11,15 +11,15 @@ app.use(express.static(path.join(__dirname,'staticPages')));
 
 
 app.get('/dashboard', isLoggedIn, (req, res) => {
-    console.log("in dashboard route")
+    console.log("in dashboard routfdsfasfddse")
     console.log("__dirname: ",__dirname)
-    const tree = dirTree("../");
+    const tree = dirTree("../../");
     console.log("tree: ", tree)
     res.sendFile(path.join(__dirname, './build/index.html')); 
 });
 app.get('/*', (req, res) => {
-    console.log("in all route");
-    const tree = dirTree("../");
+    console.log("in all routefsfdsfd");
+    const tree = dirTree("../../");
     console.log("tree: ", tree)
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
 });
