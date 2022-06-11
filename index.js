@@ -4,38 +4,23 @@ const port = 3100;
 const path = require('path');
 const isLoggedIn = require('./isLoggedIn')
 
-app.use(express.static(path.join(__dirname,'build')));
 app.use(express.static(path.join(__dirname,'staticPages')));
-
+app.use(express.static(path.join(__dirname,'build')));
 app.get('/dashboard', isLoggedIn, (req, res) => {
+    console.log("in dashboard route")
     res.sendFile(path.join(__dirname, './build/index.html')); 
 });
 app.get('/*', (req, res) => {
+    console.log("in all route")
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
 });
 app.get('/api/login', isLoggedIn, (req, res) => {
+    console.log("in api/login route")
     // TODO login + authentication logic
     res.sendFile(path.join(__dirname, './build/index.html'));
 });
 app.listen(port, ()=>{
     console.log(`Server now listening at htttp://localhost:${port}`);
 })
-
-var _getAllFilesFromFolder = function(dir) {
-    var filesystem = require("fs");
-    var results = [];
-
-    filesystem.readdirSync(dir).forEach(function(file) {
-
-        file = dir+'/'+file;
-        var stat = filesystem.statSync(file);
-
-        if (stat && stat.isDirectory()) {
-            results = results.concat(_getAllFilesFromFolder(file))
-        } else results.push(file);
-
-    });
-    return results;
-};
 
 module.exports = app;
