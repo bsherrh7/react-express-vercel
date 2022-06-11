@@ -4,8 +4,11 @@
     { 
       "src": "package.json", 
       "use": "@now/static-build"
-    },
+    }
   ],
+
+
+  
   "rewrites": 
   [{ "source": "/(.*)", "destination": "index.js" }]
 }
