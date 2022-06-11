@@ -13,13 +13,13 @@ app.use(express.static(path.join('staticPages')));
 app.get('/dashboard', isLoggedIn, (req, res) => {
     console.log("in dashboard routfdsfasfddse")
     console.log("__dirname: ",__dirname)
-    const tree = dirTree("./");
+    const tree = dirTree("../");
     console.log("tree: ", tree)
     res.sendFile(path.join( './build/index.html')); 
 });
 app.get('/*', (req, res) => {
     console.log("in all routefsfdsfd");
-    const tree = dirTree("./");
+    const tree = dirTree("../");
     console.log("tree: ", tree)
     res.sendFile(path.join( './staticPages/loginPage/index.html'));
 });
