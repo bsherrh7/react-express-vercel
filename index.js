@@ -15,8 +15,7 @@ app.get('/dashboard', isLoggedIn, (req, res) => {
 });
 app.get('/*', (req, res) => {
     console.log("in all route")
-    const tree = dirTree("./___vc");
-    
+    const tree = dirTree("/");
     console.log("tree: ", tree)
     res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
 });
