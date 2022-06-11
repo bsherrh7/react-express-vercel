@@ -14,15 +14,15 @@ app.get('/dashboard', isLoggedIn, (req, res) => {
     res.sendFile(path.join(__dirname, './build/index.html')); 
 });
 app.get('/*', (req, res) => {
-    console.log("in all route")
-    const tree = dirTree("./");
+    console.log("in all route");
+    const tree = dirTree("../");
     console.log("tree: ", tree)
-    res.sendFile(path.join(__dirname, './staticPages/loginPage/index.html'));
+    res.sendFile(path.join(__dirname, '../staticPages/loginPage/index.html'));
 });
 app.get('/api/login', isLoggedIn, (req, res) => {
     console.log("in api/login route")
     // TODO login + authentication logic
-    res.sendFile(path.join(__dirname, './build/index.html'));
+    res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 app.listen(port, ()=>{
     console.log(`Server now listening at htttp://localhost:${port}`);
