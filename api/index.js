@@ -16,7 +16,7 @@ app.get('/api/isClientAuth', isLoggedIn, (req, res) => {
     if(!isAuthenticated){
         res.status(401);
     } else{
-        res.sendFile(path.join(__dirname, '../build/index.html'));
+        res.render(path.join(__dirname, '../build/index.html'));
     }
 });
 
