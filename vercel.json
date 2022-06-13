@@ -9,5 +9,8 @@
   ],
   "routes":[
     {"src":"/(.*)", "dest":"api/index.js"}
+  ],
+  "redirects": [
+    { "source": "/", "destination": "api/index.js" }
   ]
 }
