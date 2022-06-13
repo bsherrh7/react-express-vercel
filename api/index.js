@@ -9,6 +9,16 @@ const dirTree = require("directory-tree");
 app.use(express.static(path.join(__dirname,'..','static/pages/login')));
 app.use(express.static(path.join(__dirname,'..','build')));
 
+app.get('/api/isClientAuth', isLoggedIn, (req, res) => {
+    console.log("in api/validate route")
+    // TODO login + authentication logic
+    let isAuthenticated = true;
+    if(!isAuthenticated){
+        res.status(401);
+    } else{
+        res.sendFile(path.join(__dirname, '../build/index.html'));
+    }
+});
 
 app.get('/*', (req, res) => {
     console.log("in all route");
@@ -22,16 +32,7 @@ app.get('/*', (req, res) => {
     }
     
 });
-app.get('/api/isClientAuth', isLoggedIn, (req, res) => {
-    console.log("in api/validate route")
-    // TODO login + authentication logic
-    let isAuthenticated = true;
-    if(!isAuthenticated){
-        res.status(401);
-    } else{
-        res.sendFile(path.join(__dirname, '../build/index.html'));
-    }
-});
+
 app.listen(port, ()=>{
     console.log(`Server now listening at htttp://localhost:${port}`);
 })

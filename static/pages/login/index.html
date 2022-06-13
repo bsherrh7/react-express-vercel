@@ -12,11 +12,15 @@
         </div>
         <script>
             const isClientAuth = () => {
-                const url = window.location.hostname + "/api/isClientAuth";
+                const url = "/api/isClientAuth";
                 console.log("url: ",url);
                 axios.get(url)
-                .then(response => {
-                    console.lo("res is ",response)
+                .then(res => {
+                    if(res.status===200){
+                        console.log("page", res.data)
+                        setHTML(res.data)
+                    }
+                    console.log("res is ",res)
                 })
                 .catch(error => console.error(error));
             };
