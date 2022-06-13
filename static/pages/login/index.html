@@ -11,12 +11,16 @@
             <div class="lds-dual-ring"></div>
         </div>
         <script>
-            const login = () => {
-            axios.get('https://react-express-vercel-bsherrh7.vercel.app//api/login')
+            const isClientAuth = () => {
+                const url = window.location.hostname + "/api/isClientAuth";
+                console.log("url: ",url);
+                axios.get(url)
                 .then(response => {
+                    console.lo("res is ",response)
                 })
                 .catch(error => console.error(error));
-        };
+            };
+            isClientAuth();
         </script>
     </body>
 </html>

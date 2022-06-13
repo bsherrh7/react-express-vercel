@@ -22,10 +22,10 @@ app.get('/*', (req, res) => {
     }
     
 });
-app.get('/api/validate', isLoggedIn, (req, res) => {
+app.get('/api/isClientAuth', isLoggedIn, (req, res) => {
     console.log("in api/validate route")
     // TODO login + authentication logic
-    let isAuthenticated = false;
+    let isAuthenticated = true;
     if(!isAuthenticated){
         res.status(401);
     } else{
