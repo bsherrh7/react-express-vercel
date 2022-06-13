@@ -1,53 +1,40 @@
-body{
+body {
     background-color: #E6E6E6;
     font-family: "Product Sans";
     font-size: 16px;
     letter-spacing: 0.35px;
     line-height: 19px;
 }
-#container{
+#container {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#loading-text{
+#loading-text {
     font-size: 24px;
 }
-.dot-typing {
-    position: relative;
-    left: -9999px;
-    top: 3px;
-    width: 8px;
-    height: 8px;
-    margin-left: 22px;
-    border-radius: 5px;
-    background-color: black;
-    color: black;
-    box-shadow: 9984px 0 0 0 black, 9999px 0 0 0 black, 10014px 0 0 0 black;
-    animation: dotTyping 1.5s infinite linear;
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid black;
+  border-color: black transparent black transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes dotTyping {
-    0% {
-      box-shadow: 9984px 0 0 0 black, 9999px 0 0 0 black, 10014px 0 0 0 black;
-    }
-    16.667% {
-      box-shadow: 9984px -10px 0 0 black, 9999px 0 0 0 black, 10014px 0 0 0 black;
-    }
-    33.333% {
-      box-shadow: 9984px 0 0 0 black, 9999px 0 0 0 black, 10014px 0 0 0 black;
-    }
-    50% {
-      box-shadow: 9984px 0 0 0 black, 9999px -10px 0 0 black, 10014px 0 0 0 black;
-    }
-    66.667% {
-      box-shadow: 9984px 0 0 0 black, 9999px 0 0 0 black, 10014px 0 0 0 black;
-    }
-    83.333% {
-      box-shadow: 9984px 0 0 0 black, 9999px 0 0 0 black, 10014px -10px 0 0 black;
-    }
-    100% {
-      box-shadow: 9984px 0 0 0 black, 9999px 0 0 0 black, 10014px 0 0 0 black;
-    }
+  100% {
+    transform: rotate(360deg);
   }
+}
