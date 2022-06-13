@@ -6,6 +6,8 @@ const isLoggedIn = require('./isLoggedIn')
 
 const dirTree = require("directory-tree");
 
+console.log("I am here anyway");
+
 app.use(express.static(path.join(__dirname,'staticPages')));
 app.use(express.static(path.join(__dirname,'build')));
 
