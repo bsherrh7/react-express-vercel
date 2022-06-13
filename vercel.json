@@ -12,5 +12,6 @@
       "destination": "index.js"
     }
   ],
+  
   "redirects": [{ "source": "/", "destination": "/login" }]
 }
