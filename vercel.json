@@ -9,8 +9,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "staticPages/loginPage/index.html"
+      "destination": "index.js"
     }
   ]
-  
 }
