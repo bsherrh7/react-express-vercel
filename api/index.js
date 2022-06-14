@@ -15,6 +15,11 @@ const waitSomeTime =(watiTimeMillisec)=>{
     });
 }
 
+var engines = require('consolidate');
+
+app.engine('html', engines.mustache);
+app.set('view engine', 'html');
+
 app.get('/api/isClientAuth', isLoggedIn, async (req, res) => {
     console.log("in api/validate route")
     // TODO login + authentication logic
@@ -23,7 +28,7 @@ app.get('/api/isClientAuth', isLoggedIn, async (req, res) => {
     if(!isAuthenticated){
         res.status(401);
     } else{
-        res.sendFile(path.join(__dirname, '../build/index.html')); 
+        res.render(path.join(__dirname, '../build/index.html')); 
     }
 
 });
