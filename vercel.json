@@ -15,7 +15,7 @@
   "redirects": [{ "source": "/", "destination": "/login" }],
   "functions": {
     "api/index.js": {
-      "includeFiles": "sec/app.js"
+      "includeFiles": "src/app.js"
     }
   }
 }
