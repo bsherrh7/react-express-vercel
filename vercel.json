@@ -12,5 +12,10 @@
       "destination": "api/index.js"
     }
   ],
-  "redirects": [{ "source": "/", "destination": "/login" }]
+  "redirects": [{ "source": "/", "destination": "/login" }],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "sec/app.js"
+    }
+  }
 }
