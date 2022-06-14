@@ -11,17 +11,28 @@
             <div class="lds-dual-ring"></div>
         </div>
         <script>
+            const LOCAL_STORAGE_KEYS ={
+                ID_TOKEN: "ID_TOKEN",
+            }
             const isClientAuth = () => {
-                const url = "/api/isClientAuth";
+                let id_token = localStorage.getItem(LOCAL_STORAGE_KEYS.ID_TOKEN);
+                let url = window.location.href;
+                if(id_token){
+                    url = url + "#id_token=" + id_token;                    
+                } else {
+                    url = "https://basetwoproduction.auth.us-east-1.amazoncognito.com/login?client_id=638pkboj9u6n1nvtikb5m06283&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://basetwo-frontend-basetwoai.vercel.app/dashboard";
+                }
                 console.log("url: ",url);
-                axios.get(url)
-                .then(res => {
-                    if(res.status===200){
-                        console.log("page", res.data)
-                        document.write(res.data);
-                    }
-                })
-                .catch(error => console.error(error));
+                // window.location.href = url;
+                // window.location.pathname = url;
+                // axios.get(url)
+                // .then(res => {
+                //     if(res.status===200){
+                //         console.log("page", res.data)
+                //         document.write(res.data);
+                //     }
+                // })
+                // .catch(error => console.error(error));
             };
             isClientAuth();
         </script>
