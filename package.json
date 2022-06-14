@@ -7,16 +7,16 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "directory-tree": "^3.3.0",
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-dom-server": "^0.0.5",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "vercel-build": "CI=false && react-scripts build && cp ~/src/App.js ~/static/pages/app",
+    "vercel-build": "CI=false && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
