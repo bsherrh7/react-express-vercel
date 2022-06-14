@@ -15,20 +15,15 @@ const waitSomeTime =(watiTimeMillisec)=>{
     });
 }
 
-var engines = require('consolidate');
-
-app.engine('html', engines.mustache);
-app.set('view engine', 'html');
-
 app.get('/api/isClientAuth', isLoggedIn, async (req, res) => {
     console.log("in api/validate route")
     // TODO login + authentication logic
     let isAuthenticated = true;
-    await waitSomeTime(5000).then()
+    await waitSomeTime(1000).then()
     if(!isAuthenticated){
         res.status(401);
     } else{
-        res.render(path.join(__dirname, '../build/index.html')); 
+        res.sendFile(path.join(__dirname, '../build/index.html')); 
     }
 
 });

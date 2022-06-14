@@ -18,9 +18,8 @@
                 .then(res => {
                     if(res.status===200){
                         console.log("page", res.data)
-                        setHTML(res.data)
+                        document.write(res.data);
                     }
-                    console.log("res is ",res)
                 })
                 .catch(error => console.error(error));
             };
