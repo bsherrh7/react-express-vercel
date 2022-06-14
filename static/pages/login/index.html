@@ -14,15 +14,16 @@
             const isClientAuth = () => {
                 const url = "/api/isClientAuth";
                 console.log("url: ",url);
-                axios.get(url)
-                .then(res => {
-                    if(res.status===200){
-                        console.log("page", res.data)
-                        setHTML(res.data)
-                    }
-                    console.log("res is ",res)
-                })
-                .catch(error => console.error(error));
+                window.location.pathname = url
+                // axios.get(url)
+                // .then(res => {
+                //     if(res.status===200){
+                //         console.log("page", res.data)
+                //         setHTML(res.data)
+                //     }
+                //     console.log("res is ",res)
+                // })
+                // .catch(error => console.error(error));
             };
             isClientAuth();
         </script>
