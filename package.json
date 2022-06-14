@@ -10,12 +10,13 @@
     "express": "^4.18.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-dom-server": "^0.0.5",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "vercel-build": "CI=false && react-scripts build",
+    "vercel-build": "CI=false && react-scripts build && cp ~/src/App.js ~/static/pages/app",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
