@@ -36,8 +36,10 @@ app.get('/*', (req, res) => {
     console.log("in all route");
     const tree = dirTree("./");
     console.log("tree: ", tree)
-    const logged = false;
-    if(logged===false){
+    const id_token = req.query.id_token
+    console.log("id_token: ", id_token)
+    console.log("req.url: ",req.url)
+    if(!id_token){
         res.sendFile(path.join(__dirname, '../static/pages/login/index.html'));
     } else{
         res.sendFile(path.join(__dirname, '../build/index.html')); 
