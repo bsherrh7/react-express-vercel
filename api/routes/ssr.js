@@ -3,7 +3,6 @@ const App = require("../../build/App.js")
 const React = require("react")
 const renderToString = require("react-dom/server");
 const hbs = require("handlebars");
-require("@babel/register")
 
 const router = express.Router();
 

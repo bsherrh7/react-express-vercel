@@ -6,8 +6,6 @@ const port = 3100;
 const path = require('path');
 const isLoggedIn = require('./isLoggedIn')
 const dirTree = require("directory-tree");
-require("@babel/register")
-require('babel-core/register')
 
 app.set('views', __dirname + '../build');
 app.engine('html', require('ejs').renderFile);
