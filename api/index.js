@@ -21,8 +21,6 @@ const waitSomeTime =(watiTimeMillisec)=>{
     });
 }
 
-app.use("/1", serverSideRenderer);
-
 app.get('/api/isClientAuth', isLoggedIn, async (req, res) => {
     console.log("in api/validate route")
     // TODO login + authentication logic
