@@ -38,7 +38,7 @@ app.get('/*', (req, res) => {
     console.log("in all route");
     const tree = dirTree("./");
     console.log("tree: ", tree)
-    const file = path.join(process.cwd(), 'files', 'test.json');
+    const file = path.join(process.cwd(), 'src', 'test.json');
     const stringified = readFileSync(file, 'utf8');
     console.log("file: ",file)
     console.log("stringified: ", stringified)
