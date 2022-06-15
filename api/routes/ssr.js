@@ -1,8 +1,8 @@
-import express from "express";
-import App from "../components/app";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import hbs from "handlebars";
+const express = require("express");
+const App = require("../../build/App.js")
+const React = require("react")
+const renderToString = require("react-dom/server");
+const hbs = require("handlebars");
 
 const router = express.Router();
 
