@@ -8,6 +8,8 @@ app.set('views', __dirname + '../build');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+const readFileSync = require('fs');
+
 app.use(express.static(path.join(__dirname,'..','static/pages/login')));
 app.use(express.static(path.join(__dirname,'..','build')));
 
@@ -36,10 +38,11 @@ app.get('/*', (req, res) => {
     console.log("in all route");
     const tree = dirTree("./");
     console.log("tree: ", tree)
-    const id_token = req.query.id_token
-    console.log("id_token: ", id_token)
-    console.log("req.url: ",req.url)
-    if(!id_token){
+    const file = path.join(process.cwd(), 'files', 'test.json');
+    const stringified = readFileSync(file, 'utf8');
+    console.log("file: ",file)
+    console.log("stringified: ", stringified)
+    if(true){
         res.sendFile(path.join(__dirname, '../static/pages/login/index.html'));
     } else{
         res.sendFile(path.join(__dirname, '../build/index.html')); 
