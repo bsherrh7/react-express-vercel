@@ -6,6 +6,8 @@ const port = 3100;
 const path = require('path');
 const isLoggedIn = require('./isLoggedIn')
 const dirTree = require("directory-tree");
+require("@babel/register")
+require('babel-core/register')
 
 app.set('views', __dirname + '../build');
 app.engine('html', require('ejs').renderFile);
@@ -13,7 +15,6 @@ app.set('view engine', 'html');
 
 app.use(express.static(path.join(__dirname,'..','static/pages/login')));
 app.use(express.static(path.join(__dirname,'..','build')));
-
 
 
 const waitSomeTime =(watiTimeMillisec)=>{
