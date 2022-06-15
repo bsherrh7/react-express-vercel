@@ -1,9 +1,12 @@
+import serverSideRenderer from "./routes/ssr"
+
 const express = require('express');
 const app = express();
 const port = 3100;
 const path = require('path');
 const isLoggedIn = require('./isLoggedIn')
 const dirTree = require("directory-tree");
+
 app.set('views', __dirname + '../build');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -17,6 +20,8 @@ const waitSomeTime =(watiTimeMillisec)=>{
         setTimeout(() => resolve(true), watiTimeMillisec);
     });
 }
+
+app.use("/1", serverSideRenderer);
 
 app.get('/api/isClientAuth', isLoggedIn, async (req, res) => {
     console.log("in api/validate route")

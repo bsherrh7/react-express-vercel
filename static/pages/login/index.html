@@ -4,7 +4,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="login-page.css">
     </head>
-    <title>Basetwo</title>
+    <title>Basetwoo</title>
     <body>
         <div id="container">
             <span id="loading-text">Loading</span>
@@ -15,24 +15,18 @@
                 ID_TOKEN: "ID_TOKEN",
             }
             const isClientAuth = () => {
-                let id_token = localStorage.getItem(LOCAL_STORAGE_KEYS.ID_TOKEN);
-                let url = window.location.href;
-                if(id_token){
-                    url = url + "#id_token=" + id_token;                    
-                } else {
-                    url = "https://basetwoproduction.auth.us-east-1.amazoncognito.com/login?client_id=638pkboj9u6n1nvtikb5m06283&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://basetwo-frontend-basetwoai.vercel.app/dashboard";
-                }
+                let id_token = localStorage.getItem(LOCAL_STORAGE_KEYS.ID_TOKEN)
+                const url = "/api/isClientAuth";
                 console.log("url: ",url);
-                // window.location.href = url;
-                // window.location.pathname = url;
-                // axios.get(url)
-                // .then(res => {
-                //     if(res.status===200){
-                //         console.log("page", res.data)
-                //         document.write(res.data);
-                //     }
-                // })
-                // .catch(error => console.error(error));
+                axios.get(url)
+                .then(res => {
+                    if(res.status===200){
+                        console.log("page", res.data)
+                        document.write(res.data);
+
+                    }
+                })
+                .catch(error => console.error(error));
             };
             isClientAuth();
         </script>
