@@ -1,4 +1,3 @@
-import serverSideRenderer from "./routes/ssr"
 
 const express = require('express');
 const app = express();
