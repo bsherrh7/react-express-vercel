@@ -4,8 +4,13 @@ import * as ReactDOMServer from 'react-dom/server';
 // import  App  from "./App";
 const path = require('path');
 const dirTree = require("directory-tree");
-
 const app = express();
+
+app.use(express.static(path.join(__dirname,'..','static/pages/login')));
+app.use(express.static(path.join(__dirname,'..','build')));
+
+
+
 app.get("/login",(req,res)=>{
     const tree = dirTree("./build");
 console.log("tree: ", tree)
@@ -74,8 +79,6 @@ app.get('/1', async (req, res) => {
     res.send("html");
 });
 
-app.use(express.static("./build"));
-app.use(express.static('../static/pages/login'));
 
 app.listen(4000,()=>{
     console.log("running on 4000!")
