@@ -16,11 +16,10 @@ console.log("treeeee: ",tree);
     }
     
 const auth = async (req,res)=>{
-    const app = require("./App")
     const tree = dirTree("./");
     console.log("tree: ",tree);
     console.log("in auth !!");
-    // console.log("app: ",app)
+    console.log("app: ",App)
     await waitSomeTime(4000)
     res.sendFile(path.join(__dirname, '../static/pages/login/index.html'));
 // })
