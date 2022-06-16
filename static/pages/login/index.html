@@ -25,6 +25,8 @@
                     if(res.status===200){
                         console.log("page", res.data)
                         document.write(res.data);
+                    } else{
+                        window.location.url = loginCognitoUrl;
                     }
                 })
                 .catch(error => {
