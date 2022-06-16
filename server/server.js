@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname,'..','build')));
 
 
 app.get("/login",(req,res)=>{
-    const tree = dirTree("./build");
+    const tree = dirTree("./");
 console.log("tree: ", tree)
   const html =`
   <html>
