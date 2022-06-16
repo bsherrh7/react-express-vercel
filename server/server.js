@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname,'..','build')));
 app.use("/auth",auth);
 app.use("/*",(req, res)=>{
     console.log("in all routes");
-    res.sendFile(path.join(__dirname, '../static/pages/login/index.html'));
+    res.send("sss");
 })
 
 module.exports = app;
