@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 
 const dirTree = require("directory-tree");
-const tree = dirTree("./");
+const tree = dirTree("./build");
 console.log("tree: ",tree);
 console.log("auth: ",auth)
 
