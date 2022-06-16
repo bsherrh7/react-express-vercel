@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build":"cp src/App.js build",
-    "vercel-build": "esbuild src/index.js --bundle --loader:.js=jsx --outfile=build/app.js && cp src/App.js static && esbuild server/auth.js --bundle --loader:.js=jsx --outfile=build/auth.js --platform=node",
+    "vercel-build": "cp src/App.js server && esbuild src/index.js --bundle --loader:.js=jsx --outfile=build/app.js && esbuild server/auth.js --bundle --loader:.js=jsx --outfile=build/auth.js --platform=node",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
