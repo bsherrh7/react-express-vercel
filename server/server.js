@@ -3,15 +3,18 @@ const auth = require("../build/auth.js")
 const app = express();
 const path = require('path');
 
-const dirTree = require("directory-tree");
-const tree = dirTree("./build");
-console.log("tree: ",tree);
-console.log("auth: ",auth)
+// const dirTree = require("directory-tree");
+// const tree = dirTree("./build");
+// console.log("tree: ",tree);
+// console.log("auth: ",auth)
 
 app.use(express.static(path.join(__dirname,'..','static/pages/login')));
 app.use(express.static(path.join(__dirname,'..','build')));
 
-
-app.use("/*",auth)
+app.use("/auth",auth);
+app.use("/*",(req, res)=>{
+    console.log("in all routes");
+    res.sendFile(path.join(__dirname, '../static/pages/login/index.html'));
+})
 
 module.exports = app;
