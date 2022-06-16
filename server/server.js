@@ -1,5 +1,5 @@
 import express from "express";
-import auth from "../build/auth.js";
+const auth = require("../build/auth.js")
 const app = express();
 const path = require('path');
 
