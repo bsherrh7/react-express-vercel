@@ -4,19 +4,16 @@ import * as ReactDOMServer from 'react-dom/server';
 // import  App  from "./App";
 const path = require('path');
 const dirTree = require("directory-tree");
-const app = express();
+const router = express.Router();
 
-app.use(express.static(path.join(__dirname,'..','static/pages/login')));
-app.use(express.static(path.join(__dirname,'..','build')));
-
-
-app.get('*',(req,res)=>{
+router.get('*',(req,res)=>{
     const tree = dirTree("./");
+    console.log("tree: ",tree);
     console.log("in auth !!");
     res.sendFile(path.join(__dirname, '../static/pages/login/index.html'));
 })
 
-app.get('/1', async (req, res) => {
+router.get('/1', async (req, res) => {
 
     // const app = ReactDOMServer.renderToString(<App />);
     // const html = `
@@ -39,7 +36,4 @@ app.get('/1', async (req, res) => {
     res.send("html");
 });
 
-
-app.listen(4000,()=>{
-    console.log("running on 4000!")
-});
+export default router;
