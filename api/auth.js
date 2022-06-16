@@ -3,7 +3,7 @@ import * as ReactDOMServer from 'react-dom/server';
 import App from "./AppComponent/App";
   
 const auth = async (req,res)=>{
-    const isAuth=false;
+    const isAuth=true;
     if(isAuth){
         const app = ReactDOMServer.renderToString(<App />);
         const html = `
