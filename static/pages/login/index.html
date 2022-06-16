@@ -22,6 +22,7 @@
                 console.log("url: ",url);
                 axios.post(url)
                 .then(res => {
+                    console.log("res: ",res)
                     if(res.status===200){
                         console.log("page", res.data)
                         document.write(res.data);

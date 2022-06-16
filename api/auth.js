@@ -25,7 +25,7 @@ const auth = async (req,res)=>{
         await waitSomeTime(4000)
         res.send(html);
     } else{
-        res.json({ msg: 'Must log in' });
+        res.send(401, 'string');
     }
  }
 module.exports = auth
