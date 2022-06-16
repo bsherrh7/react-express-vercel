@@ -13,3 +13,5 @@ app.use(express.static(path.join(__dirname,'..','build')));
 
 
 app.use("/*",auth)
+
+module.exports = app;
