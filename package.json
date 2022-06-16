@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "vercel-build": "esbuild src/index.js --bundle --loader:.js=jsx --outfile=build/app.js && esbuild api/server.js --bundle --loader:.js=jsx --outfile=build/server.js --platform=node",
+    "vercel-build": "cp src/App.js build && esbuild src/index.js --bundle --loader:.js=jsx --outfile=build/app.js && esbuild api/server.js --bundle --loader:.js=jsx --outfile=build/server.js --platform=node",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "client:build": "esbuild src/index.js --bundle --loader:.js=jsx --outfile=build/app.js",
