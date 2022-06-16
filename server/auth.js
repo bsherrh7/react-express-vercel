@@ -36,4 +36,4 @@ router.get('/1', async (req, res) => {
     res.send("html");
 });
 
-export default router;
+module.exports = router
