@@ -4,6 +4,7 @@ import App from "./AppComponent/App";
   
 const auth = async (req,res)=>{
     const isAuth=true;
+    
     if(isAuth){
         const app = ReactDOMServer.renderToString(<App />);
         const html = `
