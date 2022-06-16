@@ -12,11 +12,12 @@
         </div>
         <script>
             const LOCAL_STORAGE_KEYS ={
-                ID_TOKEN: "ID_TOKEN",
+                ID_TOKEN: "id-token",
             }
             const isClientAuth = () => {
+                localStorage.setItem(LOCAL_STORAGE_KEYS.ID_TOKEN,"44447")
                 let id_token = localStorage.getItem(LOCAL_STORAGE_KEYS.ID_TOKEN)
-                const url = "/api/isClientAuth";
+                const url = "/auth";
                 console.log("url: ",url);
                 axios.get(url)
                 .then(res => {
