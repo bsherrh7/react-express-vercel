@@ -12,4 +12,4 @@ app.use(express.static(path.join(__dirname,'..','static/pages/login')));
 app.use(express.static(path.join(__dirname,'..','build')));
 
 
-app.use("*",auth)
+app.use("/*",auth)
