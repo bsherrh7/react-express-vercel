@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "build/server.js",
-      "use": "@vercel/node"
+      "src": "api/server.js",
+      "use": "@vercel/esbuild"
     }
   ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "build/server.js"
+      "destination": "api/server.js"
     }
   ],
   "redirects": [{ "source": "/", "destination": "/login" }]
