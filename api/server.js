@@ -3,9 +3,12 @@ import express from "express";
 import * as ReactDOMServer from 'react-dom/server';
 // import  App  from "./App";
 const path = require('path');
+const dirTree = require("directory-tree");
 
 const app = express();
 app.get("/login",(req,res)=>{
+    const tree = dirTree("./build");
+console.log("tree: ", tree)
   const html =`
   <html>
     <head>
