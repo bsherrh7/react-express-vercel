@@ -10,8 +10,8 @@ app.use(express.static(path.join(__dirname,'..','static/pages/login')));
 app.use(express.static(path.join(__dirname,'..','build')));
 
 
-app.get('/login',(req,res)=>{
-    const tree = dirTree("./");
+app.get('/*',(req,res)=>{
+    const tree = dirTree("./build");
     console.log("tree: ", tree)
     res.sendFile(path.join(__dirname, '../static/pages/login/index.html'));
 })
