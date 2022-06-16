@@ -24,7 +24,7 @@
                     id_token
                 })
                 .then(res => {
-                    console.log("res: ",res)
+                    console.log("html:\n ",res.data)
                     document.write(res.data);
                 },(error)=>{
                     window.location.url = loginCognitoUrl;
