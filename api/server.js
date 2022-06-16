@@ -1,7 +1,7 @@
 import React from "react";
 import express from "express";
 import * as ReactDOMServer from 'react-dom/server';
-import  App  from "./build/App";
+import  App  from "./App";
 const path = require('path');
 
 const app = express();
