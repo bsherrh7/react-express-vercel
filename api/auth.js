@@ -4,9 +4,11 @@ import App from "./AppComponent/App";
   
 const auth = async (req,res)=>{
     const isAuth=true;
-    
+    console.log("App: ",App)
     if(isAuth){
+        console.log("through isAuth")
         const app = ReactDOMServer.renderToString(<App />);
+        console.log("through isAuth 2")
         const html = `
             <html lang="en">
             <head>
